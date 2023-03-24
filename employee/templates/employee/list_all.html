@@ -1,0 +1,13 @@
+<h1>Lista de todos los empleados</h1>
+<ul>
+    {% for employee in object_list %}
+        <li>{{ employee }}</li>
+    {% endfor %}
+</ul>
+
+<form method="GET">{% csrf_token %}
+    <input type="text" id="page" name="page" placeholder="Ingrese la pagina aqui">
+    <button type="submit">Buscar</button>
+</form>
+
+<h1>Showing {{ page.start_index }}-{{ page.end_index }} of {{ page.paginator.count }}</h1>
